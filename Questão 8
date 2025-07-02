@@ -1,0 +1,14 @@
+#include <iostream>
+using namespace std;
+
+// Definição da função que imprime uma saudação
+void mostrarMensagem() {
+    cout << "Olá! Seja bem-vindo ao programa!" << endl;
+}
+
+int main() {
+    // Chamada da função
+    mostrarMensagem();
+
+    return 0;
+}
