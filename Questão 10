@@ -1,0 +1,28 @@
+#include <iostream>
+using namespace std;
+
+// Função que retorna o maior entre dois números float
+float maior(float a, float b) {
+    if (a > b) {
+        return a;
+    } else {
+        return b;
+    }
+}
+
+int main() {
+    float num1, num2;
+
+    // Entrada dos valores
+    cout << "Digite o primeiro número: ";
+    cin >> num1;
+
+    cout << "Digite o segundo número: ";
+    cin >> num2;
+
+    // Chamada da função e exibição do resultado
+    float resultado = maior(num1, num2);
+    cout << "O maior número é: " << resultado << endl;
+
+    return 0;
+}
