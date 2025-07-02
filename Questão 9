@@ -1,0 +1,21 @@
+#include <iostream>
+using namespace std;
+
+// Função que retorna o quadrado de um número inteiro
+int quadrado(int numero) {
+    return numero * numero;
+}
+
+int main() {
+    int valor;
+
+    // Entrada do usuário
+    cout << "Digite um número inteiro: ";
+    cin >> valor;
+
+    // Chamada da função e exibição do resultado
+    int resultado = quadrado(valor);
+    cout << "O quadrado de " << valor << " é " << resultado << endl;
+
+    return 0;
+}
