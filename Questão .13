@@ -1,0 +1,23 @@
+#include <iostream>
+using namespace std;
+
+// Função que troca os valores usando ponteiros
+void trocar(int* a, int* b) {
+    int temp = *a;
+    *a = *b;
+    *b = temp;
+}
+
+int main() {
+    int x = 5, y = 10;
+
+    cout << "Antes da troca:" << endl;
+    cout << "x = " << x << ", y = " << y << endl;
+
+    trocar(&x, &y);  // Passando os endereços de x e y
+
+    cout << "Depois da troca:" << endl;
+    cout << "x = " << x << ", y = " << y << endl;
+
+    return 0;
+}
