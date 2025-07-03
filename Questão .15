@@ -1,0 +1,19 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    float nota;
+    float* pNota = &nota; // Ponteiro para a nota
+
+    cout << "Digite a nota do aluno: ";
+    cin >> *pNota; // Lê o valor diretamente no ponteiro
+
+    // Verifica se o aluno foi aprovado ou reprovado
+    if (*pNota >= 7.0) {
+        cout << "Aluno aprovado!" << endl;
+    } else {
+        cout << "Aluno reprovado." << endl;
+    }
+
+    return 0;
+}
