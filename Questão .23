@@ -1,0 +1,16 @@
+#ifndef FUNCOES_H
+#define FUNCOES_H
+
+#include <iostream>
+using namespace std;
+
+void mostrarInfo() {
+    cout << "Esta é a função mostrarInfo do cabeçalho funcoes.h" << endl;
+}
+
+#endif // FUNCOES_H
+
+int main() {
+    mostrarInfo();
+    return 0;
+}
