@@ -1,0 +1,19 @@
+#include <iostream>
+using namespace std;
+
+// Função que dobra o valor apontado
+void dobrar(int* ptr) {
+    *ptr = (*ptr) * 2;
+}
+
+int main() {
+    int numero = 10;
+
+    cout << "Antes: " << numero << endl;
+
+    dobrar(&numero);  // Passa o endereço da variável
+
+    cout << "Depois: " << numero << endl;
+
+    return 0;
+}
