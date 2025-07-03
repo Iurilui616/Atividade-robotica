@@ -1,0 +1,40 @@
+// funcoes.h (simulado com #pragma once)
+// #pragma once
+#include <iostream>
+using namespace std;
+
+// Passagem por valor: soma 10 e retorna resultado
+int somaPorValor(int x) {
+    return x + 10;
+}
+
+// Passagem por referência: adiciona 10 diretamente na variável
+void somaPorReferencia(int &x) {
+    x += 10;
+}
+
+// Ponteiro: adiciona 10 ao valor apontado pelo ponteiro
+void somaPorPonteiro(int* p) {
+    if (p != nullptr) {
+        *p += 10;
+    }
+}
+
+int main() {
+    int a = 5;
+    int b = 5;
+    int c = 5;
+
+    cout << "Inicialmente: a=" << a << ", b=" << b << ", c=" << c << endl;
+
+    int resultado = somaPorValor(a);
+    cout << "Depois somaPorValor(a): resultado=" << resultado << ", a=" << a << endl;
+
+    somaPorReferencia(b);
+    cout << "Depois somaPorReferencia(b): b=" << b << endl;
+
+    somaPorPonteiro(&c);
+    cout << "Depois somaPorPonteiro(&c): c=" << c << endl;
+
+    return 0;
+}
