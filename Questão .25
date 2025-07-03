@@ -1,0 +1,19 @@
+#include <iostream>
+using namespace std;
+
+// Função que inverte o sinal da variável passada por referência
+void inverterSinal(int &valor) {
+    valor = -valor;
+}
+
+int main() {
+    int numero = 15;
+
+    cout << "Antes: " << numero << endl;
+
+    inverterSinal(numero);
+
+    cout << "Depois: " << numero << endl;
+
+    return 0;
+}
