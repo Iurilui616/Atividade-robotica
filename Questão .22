@@ -1,0 +1,26 @@
+#include <iostream>
+using namespace std;
+
+// Definição do bônus usando #define
+#define BONUS_DEFINE 500.0
+
+// Definição do bônus usando const
+const float BONUS_CONST = 500.0;
+
+int main() {
+    float salario;
+
+    cout << "Digite o salário: ";
+    cin >> salario;
+
+    // Usando o bônus definido por #define
+    float salarioComBonus1 = salario + BONUS_DEFINE;
+
+    // Usando o bônus definido por const
+    float salarioComBonus2 = salario + BONUS_CONST;
+
+    cout << "Salário com bônus (#define): " << salarioComBonus1 << endl;
+    cout << "Salário com bônus (const): " << salarioComBonus2 << endl;
+
+    return 0;
+}
