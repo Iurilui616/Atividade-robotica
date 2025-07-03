@@ -1,0 +1,18 @@
+#include <iostream>
+using namespace std;
+
+// Função que incrementa o valor apontado por p
+void incrementar(int* p) {
+    (*p)++; // Incrementa o valor no endereço apontado
+}
+
+int main() {
+    int numero = 7;
+    cout << "Antes: " << numero << endl;
+
+    incrementar(&numero); // Passa o endereço da variável
+
+    cout << "Depois: " << numero << endl;
+
+    return 0;
+}
