@@ -1,0 +1,22 @@
+#include <iostream>
+using namespace std;
+
+// Função que altera um valor passado por valor e outro por referência
+void alterar(int valor, int &referencia) {
+    valor = valor * 2;        // Só altera dentro da função
+    referencia = referencia * 2; // Altera a variável original
+    cout << "Dentro da função -> valor: " << valor << ", referencia: " << referencia << endl;
+}
+
+int main() {
+    int a = 5;
+    int b = 10;
+
+    cout << "Antes da função -> a: " << a << ", b: " << b << endl;
+
+    alterar(a, b);
+
+    cout << "Depois da função -> a: " << a << ", b: " << b << endl;
+
+    return 0;
+}
