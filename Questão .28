@@ -1,0 +1,24 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+struct Pessoa {
+    string nome;
+    int idade;
+    float altura;
+};
+
+// Função que recebe um ponteiro para Pessoa e imprime os dados
+void imprimirPessoa(const Pessoa* p) {
+    cout << "Nome: " << p->nome << endl;
+    cout << "Idade: " << p->idade << " anos" << endl;
+    cout << "Altura: " << p->altura << " metros" << endl;
+}
+
+int main() {
+    Pessoa pessoa1 = {"Luiz", 16, 1.78f};
+
+    imprimirPessoa(&pessoa1);
+
+    return 0;
+}
