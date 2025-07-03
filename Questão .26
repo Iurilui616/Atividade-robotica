@@ -1,0 +1,65 @@
+#include <iostream>
+using namespace std;
+
+// Funções de operações
+int soma(int a, int b) {
+    return a + b;
+}
+
+int subtracao(int a, int b) {
+    return a - b;
+}
+
+int multiplicacao(int a, int b) {
+    return a * b;
+}
+
+// Função que exibe o menu e retorna a opção escolhida
+int menu() {
+    int opcao;
+    cout << "Escolha a operação:" << endl;
+    cout << "1 - Soma" << endl;
+    cout << "2 - Subtração" << endl;
+    cout << "3 - Multiplicação" << endl;
+    cout << "0 - Sair" << endl;
+    cout << "Opção: ";
+    cin >> opcao;
+    return opcao;
+}
+
+int main() {
+    int opcao, x, y;
+
+    do {
+        opcao = menu();
+
+        if (opcao == 0) {
+            cout << "Saindo..." << endl;
+            break;
+        }
+
+        cout << "Digite o primeiro número: ";
+        cin >> x;
+        cout << "Digite o segundo número: ";
+        cin >> y;
+
+        switch (opcao) {
+            case 1:
+                cout << "Resultado da soma: " << soma(x, y) << endl;
+                break;
+            case 2:
+                cout << "Resultado da subtração: " << subtracao(x, y) << endl;
+                break;
+            case 3:
+                cout << "Resultado da multiplicação: " << multiplicacao(x, y) << endl;
+                break;
+            default:
+                cout << "Opção inválida!" << endl;
+        }
+
+        cout << endl;
+
+    } while (true);
+
+    return 0;
+}
