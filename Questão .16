@@ -1,0 +1,23 @@
+#include <iostream>
+using namespace std;
+
+// Função que troca os valores por referência
+void trocar(int &a, int &b) {
+    int temp = a;
+    a = b;
+    b = temp;
+}
+
+int main() {
+    int x = 3, y = 7;
+
+    cout << "Antes da troca:" << endl;
+    cout << "x = " << x << ", y = " << y << endl;
+
+    trocar(x, y); // Passa por referência
+
+    cout << "Depois da troca:" << endl;
+    cout << "x = " << x << ", y = " << y << endl;
+
+    return 0;
+}
