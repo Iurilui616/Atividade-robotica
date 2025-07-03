@@ -1,0 +1,28 @@
+#include <iostream>
+using namespace std;
+
+// Função template para trocar valores apontados por dois ponteiros
+template <typename T>
+void trocarValores(T* a, T* b) {
+    T temp = *a;
+    *a = *b;
+    *b = temp;
+}
+
+int main() {
+    int x = 10, y = 20;
+    float p = 1.5f, q = 3.7f;
+
+    cout << "Antes da troca:" << endl;
+    cout << "x = " << x << ", y = " << y << endl;
+    cout << "p = " << p << ", q = " << q << endl;
+
+    trocarValores(&x, &y);
+    trocarValores(&p, &q);
+
+    cout << "\nDepois da troca:" << endl;
+    cout << "x = " << x << ", y = " << y << endl;
+    cout << "p = " << p << ", q = " << q << endl;
+
+    return 0;
+}
