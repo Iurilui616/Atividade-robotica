@@ -1,0 +1,21 @@
+#include <iostream>
+using namespace std;
+
+// Função que calcula a média dos elementos do vetor
+float calcularMedia(int* vetor, int tamanho) {
+    int soma = 0;
+    for (int i = 0; i < tamanho; i++) {
+        soma += *(vetor + i);
+    }
+    return (float)soma / tamanho;
+}
+
+int main() {
+    int numeros[10] = {5, 8, 12, 7, 9, 10, 4, 6, 11, 3};
+
+    float media = calcularMedia(numeros, 10);
+
+    cout << "A média dos elementos do vetor é: " << media << endl;
+
+    return 0;
+}
