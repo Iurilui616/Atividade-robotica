@@ -1,0 +1,98 @@
+#include <iostream>
+using namespace std;
+
+// Constantes para limites de operação
+const float LIMITE_SAQUE_MIN = 10.0;
+const float LIMITE_SAQUE_MAX = 1000.0;
+const float LIMITE_DEPOSITO_MIN = 10.0;
+const float LIMITE_DEPOSITO_MAX = 5000.0;
+
+// Função para sacar dinheiro
+bool saque(float &saldo, float valor) {
+    if (valor < LIMITE_SAQUE_MIN) {
+        cout << "Valor abaixo do limite mínimo de saque: R$" << LIMITE_SAQUE_MIN << endl;
+        return false;
+    }
+    if (valor > LIMITE_SAQUE_MAX) {
+        cout << "Valor acima do limite máximo de saque: R$" << LIMITE_SAQUE_MAX << endl;
+        return false;
+    }
+    if (valor > saldo) {
+        cout << "Saldo insuficiente." << endl;
+        return false;
+    }
+    saldo -= valor;
+    cout << "Saque realizado com sucesso: R$" << valor << endl;
+    return true;
+}
+
+// Função para depositar dinheiro
+bool deposito(float &saldo, float valor) {
+    if (valor < LIMITE_DEPOSITO_MIN) {
+        cout << "Valor abaixo do limite mínimo de depósito: R$" << LIMITE_DEPOSITO_MIN << endl;
+        return false;
+    }
+    if (valor > LIMITE_DEPOSITO_MAX) {
+        cout << "Valor acima do limite máximo de depósito: R$" << LIMITE_DEPOSITO_MAX << endl;
+        return false;
+    }
+    saldo += valor;
+    cout << "Depósito realizado com sucesso: R$" << valor << endl;
+    return true;
+}
+
+// Função para consultar saldo
+void consultarSaldo(float saldo) {
+    cout << "Saldo atual: R$" << saldo << endl;
+}
+
+// Menu de operações
+void menu() {
+    cout << "=== Caixa Eletrônico ===" << endl;
+    cout << "1 - Saque" << endl;
+    cout << "2 - Depósito" << endl;
+    cout << "3 - Consulta de Saldo" << endl;
+    cout << "0 - Sair" << endl;
+    cout << "Escolha uma opção: ";
+}
+
+int main() {
+    float saldo = 1000.0; // Saldo inicial
+    int opcao;
+    float valor;
+
+    do {
+        menu();
+        cin >> opcao;
+
+        switch (opcao) {
+            case 1:
+                cout << "Informe o valor para saque: ";
+                cin >> valor;
+                saque(saldo, valor);
+                break;
+
+            case 2:
+                cout << "Informe o valor para depósito: ";
+                cin >> valor;
+                deposito(saldo, valor);
+                break;
+
+            case 3:
+                consultarSaldo(saldo);
+                break;
+
+            case 0:
+                cout << "Encerrando o programa." << endl;
+                break;
+
+            default:
+                cout << "Opção inválida. Tente novamente." << endl;
+        }
+
+        cout << endl;
+
+    } while (opcao != 0);
+
+    return 0;
+}
